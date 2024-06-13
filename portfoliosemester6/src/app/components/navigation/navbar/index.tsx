@@ -24,7 +24,7 @@ const Navbar = ({ toggle }: { toggle: () => void }) => {
 
   return (
     <>
-      <div className={`w-full h-20 transition duration-300 ease-in-out ${isSticky? "sticky top-0 shadow-xl bg-white" : "bg-transparent"}`}>
+      <div className={`w-full h-20 transition duration-300 ease-in-out ${isSticky? "sticky top-0 shadow-xl bg-yellow-400" : "bg-transparent"}`}>
         <div className="container mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
             <Logo />
