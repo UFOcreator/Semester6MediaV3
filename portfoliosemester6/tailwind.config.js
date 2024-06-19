@@ -8,7 +8,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      "hero-image": "url('../public/images/bg1.svg')",
+      screens: { 'sm': { 'max': '640px' } },
     },
   },
   plugins: [],

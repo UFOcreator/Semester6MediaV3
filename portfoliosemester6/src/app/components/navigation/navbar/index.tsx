@@ -5,22 +5,24 @@ import Logo from "./logo";
 
 const Navbar = ({ toggle }: { toggle: () => void }) => {
   const [isSticky, setIsSticky] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition =
-      document.documentElement.scrollTop || document.body.scrollTop;
-      if (scrollPosition > 250) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+      const currentScrollPos =
+        window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScrollPos > 300 && (prevScrollPos <= currentScrollPos || isSticky)) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
+      setPrevScrollPos(currentScrollPos);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [prevScrollPos]);
 
   return (
     <>
