@@ -18,10 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      </head>
       <body className={montserat.className}>
         <Navigation />
+        <div className="h-10"></div>
         {children}
-        </body>
+      </body>
     </html>
   );
 }
